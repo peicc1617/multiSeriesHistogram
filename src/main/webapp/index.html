@@ -6,85 +6,78 @@
 	  <!--添加页面框架-->
 	  <link rel="import" id="frame" href="/webresources/common/html/appFrame.html">
 	  <script type="text/javascript" src="js/buttonAction.js"></script>
-	  <!--静态资源中已经添加的css和js-->
-	  <!--<link rel="stylesheet" href="../../ace-master/assets/css/bootstrap.min.css" />-->
-	  <!--<link rel="stylesheet" href="../../ace-master/assets/css/ace.min.css" />-->
-	  <!--<link rel="stylesheet" href="../../ace-master/assets/font-awesome/4.5.0/css/font-awesome.min.css" />-->
-	  <!--<link rel="stylesheet" href="../../ace-master/assets/css/ace-rtl.min.css" />-->
-	  <!--<link rel="stylesheet" href="../../ace-master/assets/css/ace-skins.min.css" />-->
-	  <!--<link rel="stylesheet" href="../../ace-master/assets/css/fonts.googleapis.com.css" />-->
-	  <!--<link rel="stylesheet" href="../../common/css/Extra.css" />-->
-	  <!--<link rel="stylesheet" href="../../common/css/searchStyle.css" />-->
-	  <!--<script type="text/javascript" src="../../ace-master/assets/js/ace-extra.min.js"></script>-->
-	  <!--<script type="text/javascript" src="../../ace-master/assets/js/jquery-2.1.4.min.js"></script>-->
-	  <!--<script type="text/javascript" src="../../ace-master/assets/js/ace.min.js"></script>-->
-	  <!--<script type="text/javascript" src="../../ace-master/assets/js/bootstrap.min.js"></script>-->
-	  <!--<script type="text/javascript" src="../../ace-master/assets/js/jquery.dataTables.min.js"></script>-->
-	  <!--<script type="text/javascript" src="../../ace-master/assets/js/jquery.dataTables.bootstrap.min.js"></script>-->
-	  <!--<script type="text/javascript" src="../../ace-master/assets/js/jquery-ui.custom.min.js"></script>-->
-	  <!--<script type="text/javascript" src="../../ace-master/assets/js/jquery.ui.touch-punch.min.js"></script>-->
-	  <!--<script type="text/javascript" src="../../ace-master/assets/js/ace-elements.min.js"></script>-->
-	  <!--<script type="text/javascript" src="../../ace-master/assets/js/jquery.mobile.custom.min.js"></script>-->
-	  <!--<script type="text/javascript" src="../../common/js/userLogin.js"></script>-->
-	  <!--<script type="text/javascript" src="../../common/js/fuzzySearch.js"></script>-->
-	  <!--<script type="text/javascript" src="../../common/js/table.js"></script>-->
-	  <!--<script type="text/javascript" src="../../common/js/wordEdit.js"></script>-->
+	  <script type="text/javascript" src="js/tableEdit.js"></script>
 </head>
 <body class="no-skin">
 <div id="mainFunctionHtml">
 	  <div id="myCustomLi">
 			<li class="active">
 				  <a data-toggle="tab" href="#abc">
-						<i class="green ace-icon fa fa-desktop bigger-120"></i>界面1</a>
+						<i class="green ace-icon fa fa-desktop bigger-120"></i>指标配置</a>
 			</li>
 			<li class="">
 				  <a data-toggle="tab" href="#def">
-						<i class="purple ace-icon fa fa-pencil-square-o bigger-120"></i>界面2</a>
+						<i class="purple ace-icon fa fa-pencil-square-o bigger-120"></i>数据输入</a>
 			</li>
 	  </div>
 	  <div id="myCustomTab">
 			<div class="tab-pane active" id="abc">
-				  <div id="mainBtnGroup" class="btn-group btn-group-sm">
-						<button type="button" class="btn btn-info">
-							  <span class="glyphicon glyphicon-upload"></span>导入模板
-						</button>
-						<button type="button" class="btn btn-info">
-							  <span class="glyphicon glyphicon-download"></span>导出文件
-						</button>
-						<button type="button" class="btn btn-info">
-							  <span class="glyphicon glyphicon-cloud"></span>上传文件
-						</button>
-						<button type="button" class="btn btn-info">
-							  <span class="glyphicon glyphicon-plus"></span>添加节点
-						</button>
-						<button type="button" class="btn btn-info">
-							  <span class="glyphicon glyphicon-trash"></span>删除节点
-						</button>
-						<button type="button" class="btn btn-info">
-							  <span class="glyphicon glyphicon-edit"></span>编辑节点
-						</button>
-						<button type="button" class="btn btn-info">
-							  <span class="menu-icon fa fa-download"></span>下载模板
-						</button>
-						<button type="button" class="btn btn-info">
-							  <span class="glyphicon glyphicon-ok"></span>绘制图形
-						</button>
-						<button type="button" class="btn btn-info">
-							  <span class="menu-icon fa fa-folder"></span>新建图形
-						</button>
-						<button type="button" class="btn btn-info" id="saveProject">
-							  <span class="glyphicon glyphicon-check"></span>保存
-						</button>
-						<button type="button" class="btn btn-info" id="saveAsProject">
-							  <span class="glyphicon glyphicon-log-in"></span>另存
-						</button>
-						<button type="button" class="btn btn-info">
-							  <span class="glyphicon glyphicon-check"></span>保存图片
-						</button>
-				  </div>
+				<div class="row">
+					<div class="col-xs-1 col-sm-1">
+					</div>
+					<div class="col-xs-8 col-sm-8 ">
+						<div class="tab-content padding-8">
+							<h4 class="smaller lighter green">
+								<i class="ace-icon fa fa-list"></i>
+								指标配置
+								<button type="button" class="btn btn-info" onclick="addInputElement()" style="position: relative; float: right;">
+									<i class="glyphicon glyphicon-plus"></i> 添加计算指标
+								</button>
+
+							</h4>
+							<br>
+							<ul id="inputs" class="item-list ui-sortable">
+								<li class="item-blue clearfix ui-sortable-handle" style="position: relative; opacity: 1; left: 0px; top: 0px; z-index: auto;">
+									<label class="inline">
+										<span class="editable editable-click editable-open">指标1</span>
+									</label>
+
+									<div class="pull-right action-buttons">
+										<a href="#" class="red" onclick="deleteElement(this)">
+											<i class="ace-icon fa fa-trash-o bigger-130"></i>
+										</a>
+										<span class="vbar"></span>
+									</div>
+								</li>
+
+								<li class="item-blue clearfix ui-sortable-handle" style="position: relative; opacity: 1; left: 0px; top: 0px; z-index: auto;">
+									<label class="inline">
+										<span class="editable editable-click editable-open">指标2</span>
+									</label>
+
+									<div class="pull-right action-buttons">
+										<a href="#" class="red" onclick="deleteElement(this)">
+											<i class="ace-icon fa fa-trash-o bigger-130"></i>
+										</a>
+										<span class="vbar"></span>
+									</div>
+								</li>
+
+							</ul>
+						</div>
+
+					</div>
+				</div>
 			</div>
 			<div class="tab-pane" id="def">
-				  这是界面2
+				<div id="mainBtnGroup" class="btn-group btn-group-sm">
+					<button type="button" class="btn btn-info">
+						<span class="glyphicon glyphicon-plus"></span>添加
+					</button>
+					<button type="button" class="btn btn-info">
+						<span class="glyphicon glyphicon-plus"></span>删除
+					</button>
+				</div>
 			</div>
 	  </div>
 </div>
