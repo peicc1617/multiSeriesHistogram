@@ -32,7 +32,7 @@
 						<i class="purple ace-icon fa fa-pencil-square-o bigger-120"></i>数据输入</a>
 			</li>
 		  	<li class="">
-			  <a data-toggle="tab" href="#picture" onclick="showGraph()">
+			  <a data-toggle="tab" href="#picture" >
 				  <i class="purple ace-icon fa fa-pencil-square-o bigger-120"></i>数据分析</a>
 		  	</li>
 	  </div>
@@ -45,7 +45,7 @@
 						<div class="tab-content padding-8">
 							<h4 class="smaller lighter green">
 								<i class="ace-icon fa fa-list"></i>
-								指标配置
+								表格配置
 								<button type="button" class="btn btn-info" onclick="addInputElement()" style="position: relative; float: right;">
 									<i class="glyphicon glyphicon-plus"></i> 添加计算指标
 								</button>
@@ -55,7 +55,7 @@
 							<ul id="inputs" class="item-list ui-sortable">
 								<li class="item-blue clearfix ui-sortable-handle" style="position: relative; opacity: 1; left: 0px; top: 0px; z-index: auto;">
 									<label class="inline">
-										<span class="editable editable-click editable-open">指标1</span>
+										<span class="editable editable-click editable-open">类型</span>
 									</label>
 
 									<div class="pull-right action-buttons">
@@ -68,7 +68,19 @@
 
 								<li class="item-blue clearfix ui-sortable-handle" style="position: relative; opacity: 1; left: 0px; top: 0px; z-index: auto;">
 									<label class="inline">
-										<span class="editable editable-click editable-open">指标2</span>
+										<span class="editable editable-click editable-open">系列1</span>
+									</label>
+
+									<div class="pull-right action-buttons">
+										<a href="#" class="red" onclick="deleteElement(this)">
+											<i class="ace-icon fa fa-trash-o bigger-130"></i>
+										</a>
+										<span class="vbar"></span>
+									</div>
+								</li>
+								<li class="item-blue clearfix ui-sortable-handle" style="position: relative; opacity: 1; left: 0px; top: 0px; z-index: auto;">
+									<label class="inline">
+										<span class="editable editable-click editable-open">系列2</span>
 									</label>
 
 									<div class="pull-right action-buttons">
@@ -90,8 +102,8 @@
 					<button type="button" class="btn btn-info" onclick="addRow()">
 						<span class="glyphicon glyphicon-plus"></span>添加
 					</button>
-					<button type="button" class="btn btn-info" onclick="deleteRow()">
-						<span class="glyphicon glyphicon-plus"></span>删除
+					<button type="button" class="btn btn-danger" onclick="deleteRow()">
+						<span class="glyphicon glyphicon-trash"></span>删除
 					</button>
 				</div>
 				<div>
@@ -112,11 +124,8 @@
 
 		  <div class="tab-pane" id="picture">
 			  <div id="mainBtnGroup1" class="btn-group btn-group-sm">
-				  <button type="button" class="btn btn-info" onclick="getTableInformation()">
-					  <span class="glyphicon glyphicon-plus"></span>字段信息
-				  </button>
-				  <button type="button" class="btn btn-info" onclick="">
-					  <span class="glyphicon glyphicon-plus"></span>保存
+				  <button type="button" class="btn btn-info" onclick="showGraph()">
+					  <span class="glyphicon glyphicon-plus"></span>显示图表
 				  </button>
 			  </div>
 			  <div>
